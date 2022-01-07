@@ -136,8 +136,8 @@ public class Tabuleiro {
             colunaNavioComputer = sorteio.nextInt(10);
             validaLinha[i] = linhaNavioComputer;
             validaColuna[i] = colunaNavioComputer;
-            System.out.println(linhaNavioComputer);
-            System.out.println(colunaNavioComputer);
+            /*System.out.println(linhaNavioComputer);
+            System.out.println(colunaNavioComputer);*/
             coordenadasTabuleiro[linhaNavioComputer][colunaNavioComputer] = Legendas.NAVIO_POSICIONADO.getLegenda();
 
             for (int anterior = 0; anterior < i; anterior++) {
@@ -146,8 +146,8 @@ public class Tabuleiro {
                 if (b) {
                         linhaNavioComputer = sorteio.nextInt(10);
                         colunaNavioComputer = sorteio.nextInt(10);
-                        System.out.println(linhaNavioComputer);
-                        System.out.println(colunaNavioComputer);
+                        /*System.out.println(linhaNavioComputer);
+                        System.out.println(colunaNavioComputer);*/
                         coordenadasTabuleiro[linhaNavioComputer][colunaNavioComputer] = Legendas.NAVIO_POSICIONADO.getLegenda();
 
                 }
