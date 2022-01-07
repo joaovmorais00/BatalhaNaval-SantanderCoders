@@ -1,0 +1,24 @@
+
+G
+java:S1659"%Declare "acertos" on a separate line.(“ºâŠùÿÿÿÿ8 ˜ã/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¨˜ã/
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(æ¿ÔÙùÿÿÿÿ8¨˜ã/
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(èßŸ¤şÿÿÿÿ8±˜ã/
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8±˜ã/
+U	java:S1061"9Replace this use of System.out or System.err by a logger.(ö½í¾8±˜ã/
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(Ú™§€8±˜ã/
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(üë×úÿÿÿÿ8±˜ã/
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(šùÑ›şÿÿÿÿ8±˜ã/
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8±˜ã/
+;
+java:S2119B"Save and re-use this "Random".(ÎĞˆı8Á˜ã/
+Z	java:S106X"9Replace this use of System.out or System.err by a logger.(•©†…şÿÿÿÿ8Ò˜ã/
+U	java:S106\"9Replace this use of System.out or System.err by a logger.(ÂÍïÇ8â˜ã/
+n
+java:S3457f"Q%n should be used in place of \n to produce the platform-specific line separator.(üç”8ñ˜ã/
+U	java:S106f"9Replace this use of System.out or System.err by a logger.(üç”8ñ˜ã/
+A
+java:S1659o"$Declare "coluna" on a separate line.(¯ïÓ‚8ñ˜ã/
+T	java:S106x"9Replace this use of System.out or System.err by a logger.(™ª)8ñ˜ã/
+N
+java:S6126x"2Replace this String concatenation with Text block.(™ª)8ñ˜ã/

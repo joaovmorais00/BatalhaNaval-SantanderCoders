@@ -7,5 +7,8 @@ public class Main {
 
         tab.mostraMatriz();
 
+        tab.preencherNavios();
+        tab.mostraMatriz();
+
     }
 }
