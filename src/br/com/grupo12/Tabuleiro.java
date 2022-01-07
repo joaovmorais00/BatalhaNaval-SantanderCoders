@@ -92,7 +92,7 @@ public class Tabuleiro {
             linhaNavio = input.nextInt();
             System.out.printf("Digite a coluna em que ficará o navio %s: (EX: 0, 2, 5) %n", (i + 1));
             colunaNavio = input.nextInt();
-            coordenadasTabuleiro [linhaNavio][colunaNavio] = 'N';
+            coordenadasTabuleiro [linhaNavio][colunaNavio] = Legendas.NAVIO_POSICIONADO.getLegenda();
         }
 
 
