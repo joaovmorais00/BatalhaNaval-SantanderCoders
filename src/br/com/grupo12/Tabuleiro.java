@@ -1,5 +1,7 @@
 package br.com.grupo12;
 
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Tabuleiro {
@@ -78,7 +80,7 @@ public class Tabuleiro {
 
     // Metodo preencher navios jogador
 
-    public void preencherNavios(){
+    /*public void preencherNavios(){
         int linhaNavio = 0;
         int colunaNavio = 0;
 
@@ -94,6 +96,29 @@ public class Tabuleiro {
             colunaNavio = input.nextInt();
             coordenadasTabuleiro [linhaNavio][colunaNavio] = Legendas.NAVIO_POSICIONADO.getLegenda();
         }
+        */
+
+
+        public void preencherNavios(){
+            String coordenadaNavio;
+            int linhaNavio = 0;
+            int colunaNavio = 0;
+
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
+            System.out.println("");
+
+            for (int i = 0; i < 3; i++) {
+                System.out.printf("Digite a coordenada em que ficará o navio %s: (Ex: A1, C3, D4) %n",(i + 1));
+                coordenadaNavio = input.next();
+
+                String [] coordenadasNavioSplit = coordenadaNavio.split("");
+                linhaNavio = (int) LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
+                colunaNavio = Integer.parseInt(coordenadasNavioSplit[1]);
+
+                coordenadasTabuleiro [linhaNavio][colunaNavio] = Legendas.NAVIO_POSICIONADO.getLegenda();
+            }
 
 
 
