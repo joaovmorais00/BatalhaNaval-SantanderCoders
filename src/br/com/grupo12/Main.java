@@ -5,9 +5,10 @@ public class Main {
         Tabuleiro tab = new Tabuleiro();
        // tab.mostraMatriz();
 
-        tab.mostraMatriz();
+       tab.mostraMatriz();
 
-        tab.preencherNavios();
+        //tab.preencherNavios();
+        tab.preencherNaviosComputador();
         tab.mostraMatriz();
 
     }
