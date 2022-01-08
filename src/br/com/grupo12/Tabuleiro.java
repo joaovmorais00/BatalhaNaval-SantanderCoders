@@ -10,48 +10,20 @@ public class Tabuleiro {
     char[][] coordenadasTabuleiro = new char[10][10];
 
     Tabuleiro() {
-        this.inicializarTabuleiro();
+        this.inicializaTabuleiro();
     }
 
-    /*
-    public void mostraMatriz(){
-        System.out.println("---------------------------------------------");
-        System.out.println("                   JOGADOR");
-        System.out.println("---------------------------------------------");
-        System.out.println("|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |");
-        System.out.println("---------------------------------------------");
+    public void inicializaTabuleiro() {
+        for (int i = 0; i < this.coordenadasTabuleiro.length; i++) {
 
-        String linha = "";
-
-        for (int i =0; i<10; i++){
-            linha = linha + "| ";
-            for(int j=0; j<11; j++) {
-                if (j == 0) {
-                    linha = linha + LinhasTabuleiro.values()[i];
-                }
-                else {
-                    linha = linha + " ";
-                }
-                linha = linha + " | ";
-            }
-            System.out.println(linha);
-            System.out.println("---------------------------------------------");
-            linha = "";
-        }
-    }
-
-     */
-
-    public void inicializarTabuleiro() {
-        for (int i = 0; i < 10; i++) {
-
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < this.coordenadasTabuleiro.length; j++) {
                 coordenadasTabuleiro[i][j] = ' ';
             }
         }
     }
 
-    public void mostraMatriz() {
+    /*
+    public void exibeTabuleiro() {
         System.out.println("---------------------------------------------");
         System.out.println("                   JOGADOR");
         System.out.println("---------------------------------------------");
@@ -78,29 +50,12 @@ public class Tabuleiro {
         }
     }
 
-    // Metodo preencher navios jogador
-
-    /*public void preencherNavios(){
-        int linhaNavio = 0;
-        int colunaNavio = 0;
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
-        System.out.println("");
-
-        for (int i = 0; i < 3; i++) {
-            System.out.printf("Digite a linha em que ficará o navio %s: (Ex: 1, 3, 4) %n",(i + 1));
-            linhaNavio = input.nextInt();
-            System.out.printf("Digite a coluna em que ficará o navio %s: (EX: 0, 2, 5) %n", (i + 1));
-            colunaNavio = input.nextInt();
-            coordenadasTabuleiro [linhaNavio][colunaNavio] = Legendas.NAVIO_POSICIONADO.getLegenda();
-        }
-        */
+     */
 
     // Metodo preencher navios jogador
 
-    public void preencherNavios() {
+    /*
+    public void insereNavios() {
         String coordenadaNavio;
         int linhaNavio = 0;
         int colunaNavio = 0;
@@ -122,9 +77,12 @@ public class Tabuleiro {
         }
     }
 
+     */
+
     // Metodo preencher navios computador
 
-    public void preencherNaviosComputador() {
+    /*
+    public void insereNaviosComputador() {
         int linhaNavioComputer;
         int colunaNavioComputer;
         int[] validaLinha = new int[3];
@@ -136,8 +94,8 @@ public class Tabuleiro {
             colunaNavioComputer = sorteio.nextInt(10);
             validaLinha[i] = linhaNavioComputer;
             validaColuna[i] = colunaNavioComputer;
-            /*System.out.println(linhaNavioComputer);
-            System.out.println(colunaNavioComputer);*/
+            // System.out.println(linhaNavioComputer);
+            // System.out.println(colunaNavioComputer);
             coordenadasTabuleiro[linhaNavioComputer][colunaNavioComputer] = Legendas.NAVIO_POSICIONADO.getLegenda();
 
             for (int anterior = 0; anterior < i; anterior++) {
@@ -146,12 +104,14 @@ public class Tabuleiro {
                 if (b) {
                         linhaNavioComputer = sorteio.nextInt(10);
                         colunaNavioComputer = sorteio.nextInt(10);
-                        /*System.out.println(linhaNavioComputer);
-                        System.out.println(colunaNavioComputer);*/
+                        // System.out.println(linhaNavioComputer);
+                        // System.out.println(colunaNavioComputer);
                         coordenadasTabuleiro[linhaNavioComputer][colunaNavioComputer] = Legendas.NAVIO_POSICIONADO.getLegenda();
 
                 }
             }
         }
     }
+
+     */
 }
