@@ -7,10 +7,31 @@ public class Usuario extends Jogador{
     Usuario() {
         this.insereNavios();
         this.exibeNavios();
+        this.atiraNavio();
     }
 
     @Override
     public void atiraNavio() {
+        String coordenadaNavio;
+        int linhaNavio = 0;
+        int colunaNavio = 0;
+        System.out.println("Digite a posição do tabuleiro em que você deseja atirar:");
+        System.out.println("");
+        Scanner input = new Scanner(System.in);
+        coordenadaNavio = input.next();
+        String[] coordenadasNavioSplit = coordenadaNavio.split("");
+        linhaNavio = (int) LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
+        colunaNavio = Integer.parseInt(coordenadasNavioSplit[1]);
+
+        switch(this.tabuleiro.coordenadasTabuleiro[linhaNavio][colunaNavio]){
+            case 'N':
+                System.out.println("Entrou");
+                break;
+
+            default:
+                System.out.println("Nenhuma legenda");
+                break;
+        }
 
     }
 
@@ -26,7 +47,7 @@ public class Usuario extends Jogador{
             System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
             System.out.println("");
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 1; i++) {
                 System.out.printf("Digite a coordenada em que ficará o navio %s: (Ex: A1, C3, D4) %n", (i + 1));
                 coordenadaNavio = input.next();
 
