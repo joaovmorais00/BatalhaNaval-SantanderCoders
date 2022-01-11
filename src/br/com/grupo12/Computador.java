@@ -6,6 +6,7 @@ public class Computador extends Jogador{
 
     Computador() {
         this.insereNavios();
+        this.exibeNavios(false);
     }
 
 

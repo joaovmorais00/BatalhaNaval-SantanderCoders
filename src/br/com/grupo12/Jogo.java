@@ -8,9 +8,6 @@ public class Jogo {
     private Computador computador = new Computador();
 
     public void startJogo(){
-        jogador.insereNavios();
-        jogador.exibeNavios(true);
-        computador.exibeNavios(false);
         while(jogador.quantidadeNavios !=0 || computador.quantidadeNavios !=0){
             this.atiraUsuario();
             jogador.exibeNavios(true);
@@ -40,8 +37,12 @@ public class Jogo {
             System.out.printf("\nDigite a posição do tabuleiro em que você deseja atirar:\n\n");
             coordenadaTiro = input.next();
             String[] coordenadasNavioSplit = coordenadaTiro.split("");
-            linha = (int) LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
+            linha = LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
             coluna = Integer.parseInt(coordenadasNavioSplit[1]);
+            if(linha<LinhasTabuleiro.A.getValor() || linha>LinhasTabuleiro.J.getValor() || coluna<0 || coluna>9){
+                System.out.printf("\nEntrada inválida!");
+                continue;
+            }
             switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                 case 'N': case 'X': case 'n':
                     switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
@@ -78,6 +79,7 @@ public class Jogo {
                             System.out.println("Você já atirou nessa posição do tabuleiro!");
                             break;
                     }
+                    break;
                 default:
                     System.out.println("Entrada inválida");
                     break;
@@ -129,6 +131,7 @@ public class Jogo {
                             System.out.println("O computador já atirou nessa posição do tabuleiro!");
                             break;
                     }
+                    break;
             }
         }
     }

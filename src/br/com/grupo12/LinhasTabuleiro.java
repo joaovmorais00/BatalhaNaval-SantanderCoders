@@ -13,12 +13,12 @@ public enum LinhasTabuleiro {
     I(8),
     J(9);
 
-    private Number valor;
+    private int valor;
 
-    LinhasTabuleiro(Number valor) {
+    LinhasTabuleiro(int valor) {
         this.valor = valor;
     }
-    public Number getValor(){
+    public int getValor(){
         return this.valor;
     }
 }
