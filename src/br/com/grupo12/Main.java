@@ -15,8 +15,9 @@ public class Main {
 
          */
 
-        Usuario usuario = new Usuario();
-        Computador computador = new Computador();
-
+//        Usuario usuario = new Usuario();
+//        Computador computador = new Computador();
+        Jogo jogo = new Jogo();
+        jogo.startJogo();
     }
 }

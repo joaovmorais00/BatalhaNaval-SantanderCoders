@@ -6,33 +6,7 @@ public class Usuario extends Jogador{
 
     Usuario() {
         this.insereNavios();
-        this.exibeNavios();
-        this.atiraNavio();
-    }
-
-    @Override
-    public void atiraNavio() {
-        String coordenadaNavio;
-        int linhaNavio = 0;
-        int colunaNavio = 0;
-        System.out.println("Digite a posição do tabuleiro em que você deseja atirar:");
-        System.out.println("");
-        Scanner input = new Scanner(System.in);
-        coordenadaNavio = input.next();
-        String[] coordenadasNavioSplit = coordenadaNavio.split("");
-        linhaNavio = (int) LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
-        colunaNavio = Integer.parseInt(coordenadasNavioSplit[1]);
-
-        switch(this.tabuleiro.coordenadasTabuleiro[linhaNavio][colunaNavio]){
-            case 'N':
-                System.out.println("Entrou");
-                break;
-
-            default:
-                System.out.println("Nenhuma legenda");
-                break;
-        }
-
+//        this.exibeNavios();
     }
 
     @Override
@@ -60,31 +34,5 @@ public class Usuario extends Jogador{
 
     }
 
-    public void exibeNavios() {
 
-            System.out.println("---------------------------------------------");
-            System.out.println("                   USUÁRIO");
-            System.out.println("---------------------------------------------");
-            System.out.println("|   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |");
-            System.out.println("---------------------------------------------");
-
-            String linha = "";
-
-            for (int i = 0; i < this.tabuleiro.coordenadasTabuleiro.length; i++) {
-                linha = linha + "| ";
-                for (int j = 0; j < this.tabuleiro.coordenadasTabuleiro.length + 1; j++) {
-                    if (j == 0) {
-                        linha = linha + LinhasTabuleiro.values()[i];
-                    } else {
-
-                        linha = linha + this.tabuleiro.coordenadasTabuleiro[i][j - 1];
-
-                    }
-                    linha = linha + " | ";
-                }
-                System.out.println(linha);
-                System.out.println("---------------------------------------------");
-                linha = "";
-            }
-        }
 }

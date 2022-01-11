@@ -6,13 +6,9 @@ public class Computador extends Jogador{
 
     Computador() {
         this.insereNavios();
-        this.exibeNavios();
+//        this.exibeNavios();
     }
 
-    @Override
-    public void atiraNavio() {
-
-    }
 
     @Override
     public void insereNavios() {
@@ -47,17 +43,4 @@ public class Computador extends Jogador{
             }
         }
 
-         public void exibeNavios() {
-              String coordenadasNavioComputador = "";
-
-              for(int i = 0; i < this.tabuleiro.coordenadasTabuleiro.length; i++) {
-
-                  for(int j = 0; j < this.tabuleiro.coordenadasTabuleiro.length; j++) {
-                      if(this.tabuleiro.coordenadasTabuleiro[i][j] != ' ') {
-                          coordenadasNavioComputador += LinhasTabuleiro.values()[i] + "" + j + " | ";
-                      }
-                  }
-              }
-             System.out.println(coordenadasNavioComputador);
-         }
 }
