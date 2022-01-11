@@ -6,7 +6,6 @@ public class Usuario extends Jogador{
 
     Usuario() {
         this.insereNavios();
-//        this.exibeNavios();
     }
 
     @Override
@@ -21,7 +20,7 @@ public class Usuario extends Jogador{
             System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
             System.out.println("");
 
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < this.quantidadeNavios; i++) {
                 System.out.printf("Digite a coordenada em que ficará o navio %s: (Ex: A1, C3, D4) %n", (i + 1));
                 coordenadaNavio = input.next();
 

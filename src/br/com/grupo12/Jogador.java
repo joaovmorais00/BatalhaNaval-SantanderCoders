@@ -20,7 +20,7 @@ public abstract class Jogador {
         if(usuario==true){
             System.out.println("                   USUÁRIO");
         }else{
-            System.out.println("                  COMPUTADOR");
+            System.out.println("                 COMPUTADOR");
         }
 
         System.out.println("---------------------------------------------");

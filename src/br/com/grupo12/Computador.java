@@ -6,7 +6,6 @@ public class Computador extends Jogador{
 
     Computador() {
         this.insereNavios();
-//        this.exibeNavios();
     }
 
 
@@ -19,7 +18,7 @@ public class Computador extends Jogador{
             int[] validaColuna = new int[3];
             Random sorteio = new Random();
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < this.quantidadeNavios; i++) {
                 linhaNavioComputer = sorteio.nextInt(10);
                 colunaNavioComputer = sorteio.nextInt(10);
                 validaLinha[i] = linhaNavioComputer;

@@ -44,14 +44,17 @@ public class Jogo {
             coluna = Integer.parseInt(coordenadasNavioSplit[1]);
             switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                 case 'N': case 'X': case 'n':
-                    System.out.println("Tiro certeiro!");
                     switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                         case ' ':
+                            System.out.println("Tiro certeiro!");
                             this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTEIRO.getLegenda();
+                            this.computador.quantidadeNavios--;
                             invalidInput = false;
                             break;
                         case 'N':
+                            System.out.println("Tiro certeiro!");
                             this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTERIO_NAVIO_POSICIONADO.getLegenda();
+                            this.computador.quantidadeNavios--;
                             invalidInput = false;
                             break;
                         default:
@@ -60,13 +63,14 @@ public class Jogo {
                     }
                     break;
                 case '*': case ' ': case '-':
-                    System.out.println("Tiro na água!");
                     switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                         case ' ':
+                            System.out.println("Tiro na água!");
                             this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA.getLegenda();
                             invalidInput = false;
                             break;
                         case 'N':
+                            System.out.println("Tiro na água!");
                             this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA_NAVIO_POSICIONADO.getLegenda();
                             invalidInput = false;
                             break;
@@ -91,44 +95,40 @@ public class Jogo {
         while (invalidInput==true){
             linha = sorteio.nextInt(10);
             coluna = sorteio.nextInt(10);
-//            String[] coordenadasNavioSplit = coordenadaNavio.split("");
-            linha = (int) LinhasTabuleiro.valueOf(coordenadasNavioSplit[0].toUpperCase()).getValor();
-            coluna = Integer.parseInt(coordenadasNavioSplit[1]);
-            switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
+            switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                 case 'N': case 'X': case 'n':
-                    System.out.println("Tiro certeiro!");
-                    switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
+                    switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                         case ' ':
-                            this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTEIRO.getLegenda();
+                            System.out.println("Tiro certeiro do computador!");
+                            this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTEIRO.getLegenda();
                             invalidInput = false;
                             break;
                         case 'N':
-                            this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTERIO_NAVIO_POSICIONADO.getLegenda();
+                            System.out.println("Tiro certeiro do computador!");
+                            this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTERIO_NAVIO_POSICIONADO.getLegenda();
                             invalidInput = false;
                             break;
                         default:
-                            System.out.println("Você já atirou nessa posição do tabuleiro!");
+                            System.out.println("O computador já atirou nessa posição do tabuleiro!");
                             break;
                     }
                     break;
                 case '*': case ' ': case '-':
-                    System.out.println("Tiro na água!");
-                    switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
+                    switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                         case ' ':
-                            this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA.getLegenda();
+                            System.out.println("Tiro na água do computador!");
+                            this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA.getLegenda();
                             invalidInput = false;
                             break;
                         case 'N':
-                            this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA_NAVIO_POSICIONADO.getLegenda();
+                            System.out.println("Tiro na água do computador!");
+                            this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA_NAVIO_POSICIONADO.getLegenda();
                             invalidInput = false;
                             break;
                         default:
-                            System.out.println("Você já atirou nessa posição do tabuleiro!");
+                            System.out.println("O computador já atirou nessa posição do tabuleiro!");
                             break;
                     }
-                default:
-                    System.out.println("Entrada inválida");
-                    break;
             }
         }
     }
