@@ -7,7 +7,7 @@ public abstract class Jogador {
 
     Jogador() {
         this.tabuleiro = new Tabuleiro();
-        this.quantidadeNavios = 3;
+        this.quantidadeNavios = 10;
     }
 
 
