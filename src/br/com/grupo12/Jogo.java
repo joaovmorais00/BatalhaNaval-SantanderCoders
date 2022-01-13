@@ -18,8 +18,12 @@ public class Jogo {
             computador.exibeNavios(false);
         }
         //FINAL DO JOGO
-        if(computador.quantidadeNavios==0) System.out.printf("O Usuário foi o vencedor!\n\n");
-        else System.out.printf("O Computador foi o vencedor!\n\n");
+        if(computador.quantidadeNavios==0) {
+            System.out.printf("O Usuário foi o vencedor!\n\n");
+        }
+        else {
+            System.out.printf("O Computador foi o vencedor!\n\n");
+        }
 
         jogador.exibeNavios(true);
         computador.exibeNavios(false);
