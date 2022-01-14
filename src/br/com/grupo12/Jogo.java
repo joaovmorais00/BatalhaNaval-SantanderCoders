@@ -8,7 +8,7 @@ public class Jogo {
     private Computador computador = new Computador();
 
     public void startJogo(){
-        while(jogador.quantidadeNavios !=0 || computador.quantidadeNavios !=0){
+        while(jogador.quantidadeNavios != 0 || computador.quantidadeNavios != 0){
 
             this.atiraUsuario();
             jogador.exibeNavios(true);
@@ -16,8 +16,12 @@ public class Jogo {
             if(computador.quantidadeNavios ==0) break;
 
             this.atiraComputador();
-            computador.exibeNavios(false);
+
+
+            System.out.println("Quantidade de navios Jogador: "+ jogador.quantidadeNavios);
+            System.out.println("Quantidade de navios Computador: "+ computador.quantidadeNavios);
         }
+
         //FINAL DO JOGO
         if(computador.quantidadeNavios==0) {
             System.out.printf("O Usuário foi o vencedor!\n\n");
@@ -39,7 +43,7 @@ public class Jogo {
 
         boolean entradaValida = true;
 
-        while (entradaValida==true){
+        while (entradaValida == true){
             System.out.printf("\nDigite a posição do tabuleiro em que você deseja atirar:\n\n");
 
             coordenadaTiro = input.next();
@@ -95,6 +99,8 @@ public class Jogo {
                     break;
             }
         }
+
+
     }
 
     private void atiraComputador() {
@@ -102,26 +108,31 @@ public class Jogo {
         int coluna = -1;
         Random sorteio = new Random();
 
-        Boolean invalidInput = true;
+        boolean entradaValida = true;
 
-        while (invalidInput==true){
+        while (entradaValida==true){
+
             linha = sorteio.nextInt(10);
             coluna = sorteio.nextInt(10);
+
             switch(this.jogador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                 case 'N': case 'X': case 'n':
                     switch(this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna]){
                         case ' ':
                             System.out.println("Tiro certeiro do computador!");
                             this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTEIRO.getLegenda();
-                            invalidInput = false;
+                            this.jogador.quantidadeNavios--;
+                            entradaValida = false;
                             break;
                         case 'N':
                             System.out.println("Tiro certeiro do computador!");
                             this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_CERTERIO_NAVIO_POSICIONADO.getLegenda();
-                            invalidInput = false;
+                            this.jogador.quantidadeNavios--;
+                            entradaValida = false;
                             break;
                         default:
-                            System.out.println("O computador já atirou nessa posição do tabuleiro!");
+                           // System.out.println("O computador já atirou nessa posição do tabuleiro!");
+                            System.out.println("");
                             break;
                     }
                     break;
@@ -130,19 +141,21 @@ public class Jogo {
                         case ' ':
                             System.out.println("Tiro na água do computador!");
                             this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA.getLegenda();
-                            invalidInput = false;
+                            entradaValida = false;
                             break;
                         case 'N':
                             System.out.println("Tiro na água do computador!");
                             this.computador.tabuleiro.coordenadasTabuleiro[linha][coluna] = Legendas.TIRO_AGUA_NAVIO_POSICIONADO.getLegenda();
-                            invalidInput = false;
+                            entradaValida = false;
                             break;
                         default:
-                            System.out.println("O computador já atirou nessa posição do tabuleiro!");
+                            // System.out.println("O computador já atirou nessa posição do tabuleiro!");
+                            System.out.println("");
                             break;
                     }
                     break;
             }
         }
+        System.out.println("           ---                 ");
     }
 }

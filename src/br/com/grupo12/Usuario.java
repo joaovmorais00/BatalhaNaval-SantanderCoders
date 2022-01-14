@@ -33,21 +33,6 @@ public class Usuario extends Jogador{
 
                     String[] coordenadaNavioSplit = coordenadaNavio.split("");
 
-                    /*
-                    if(coordenadaNavioSplit.length != 2) {
-                        System.out.printf("\nEntrada inválida!\n");
-                        continue;
-                    }
-                    else if(!this.tabuleiro.pertenceLinhaTabuleiro(coordenadaNavioSplit[0])) {
-                        System.out.printf("\nEntrada inválida!\n");
-                        continue;
-                    }
-                    else if(!this.tabuleiro.pertenceColunaTabuleiro(coordenadaNavioSplit[1])) {
-                        System.out.printf("\nEntrada inválida!\n");
-                        continue;
-                    }
-
-                     */
 
                     if (!this.validaCoordenada(coordenadaNavioSplit)) {
                         continue;
