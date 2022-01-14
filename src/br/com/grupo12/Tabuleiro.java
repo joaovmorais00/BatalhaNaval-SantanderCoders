@@ -16,4 +16,19 @@ public class Tabuleiro {
             }
         }
     }
+
+    public boolean pertenceLinhaTabuleiro(String coordenada0) {
+
+        for (LinhasTabuleiro linha : LinhasTabuleiro.values()) {
+            if(coordenada0.equalsIgnoreCase(linha.name())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean pertenceColunaTabuleiro(String coordenada1) {
+
+        return coordenada1.matches("^[0-9]");
+
+    }
 }

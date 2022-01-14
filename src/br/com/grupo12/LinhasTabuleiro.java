@@ -21,4 +21,7 @@ public enum LinhasTabuleiro {
     public int getValor(){
         return this.valor;
     }
+
+
+
 }
