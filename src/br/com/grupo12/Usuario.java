@@ -5,8 +5,12 @@ import java.util.Scanner;
 public class Usuario extends Jogador{
 
     Usuario() {
+        System.out.printf("Olá, seja bem vindo ao jogo Batalha Naval! %n%n");
+        this.exibeNavios(true);
         this.insereNavios();
         this.exibeNavios(true);
+
+
     }
 
     @Override
@@ -18,7 +22,8 @@ public class Usuario extends Jogador{
             boolean entradaValida;
 
             Scanner input = new Scanner(System.in);
-            System.out.printf("Olá, seja bem vindo ao jogo Batalha Naval! %n%n");
+
+
             System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
             System.out.println("");
 
