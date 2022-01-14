@@ -18,7 +18,7 @@ public class Usuario extends Jogador{
             boolean entradaValida;
 
             Scanner input = new Scanner(System.in);
-
+            System.out.printf("Olá, seja bem vindo ao jogo Batalha Naval! %n%n");
             System.out.println("Para começar o jogo, você deve escolher a posição dos seus navios no tabuleiro!");
             System.out.println("");
 
